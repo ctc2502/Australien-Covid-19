@@ -19,12 +19,12 @@ class InputField {
 
 
 
-    /*
+    
     public color Background = color(140, 140, 140);
     public color Foreground = color(0, 0, 0);
     public color BackgroundSelected = color(160, 160, 160);
     public color Border = color(30, 30, 30);
-*/
+
     public boolean BorderEnable = false;
     public int BorderWeight = 5;
 
@@ -38,9 +38,9 @@ class InputField {
 
     void DRAW() {
         if (selected) {
-            fill(color(160, 160, 160));
+            fill(BackgroundSelected);
         } else {
-            fill(color(140, 140, 140));
+            fill(Background);
         }
 
         if (BorderEnable) {
@@ -48,12 +48,12 @@ class InputField {
             noStroke();
         } else {
             strokeWeight(BorderWeight);
-            stroke(color(30, 30, 30));
+            stroke(Foreground);
         }
 
         rect(X, Y, W, H);
 
-        fill(color(0, 0, 0));
+        fill(Foreground);
 
         textSize(TEXTSIZE);
         text(Text, X + (textWidth("a") / 2), Y + TEXTSIZE);

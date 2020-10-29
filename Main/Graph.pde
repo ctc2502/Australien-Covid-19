@@ -4,7 +4,7 @@ class Graph extends DataBroker {
     public void DRAW(DataBroker DB, InputField country, InputField year){
         pushMatrix();
         scale((float) 0.5);
-        translate(0, 660);
+        translate(0, 1025);
         for (int i = 0; i < 115; i++) {
             int yearInt = 1900+i;
             String yearString = yearInt+"";
