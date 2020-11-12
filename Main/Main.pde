@@ -16,19 +16,20 @@ import java.util.ArrayList;
 
     public void settings() {
         //size(1000, 1000);
-        DB.loadData();
         fullScreen();
     }
 
     public void setup() {
         super.setup();
+                DB.loadData();
+
         textboxes.add(year);
         textboxes.add(country);
 
     }
 
     public void draw() {
-/*
+
         clear();
         background(0,150,175);
 
@@ -50,7 +51,7 @@ import java.util.ArrayList;
             }
             text(msg, (x+200 - textWidth(msg)), 260);
         }
-        */
+        
     }
 
     public void keyPressed() {
