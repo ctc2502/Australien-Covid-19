@@ -15,10 +15,6 @@ class InputField {
         this.W = W;
         this.H = H;
     }
-
-
-
-
     
     public color Background = color(140, 140, 140);
     public color Foreground = color(0, 0, 0);
@@ -29,7 +25,7 @@ class InputField {
     public int BorderWeight = 5;
 
     public String Text = "";
-    public int TextLength = 0;
+    public int TextLength = 0; 
 
     public boolean selected = false;
 

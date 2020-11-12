@@ -12,7 +12,7 @@ class DataBroker {
     }
 
     void loadData() {
-        ROWS = loadStrings("dnd.csv");
+        ROWS = loadStrings("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv?fbclid=IwAR1QrkDCJdrxTmOXlPJFfTlXEzQWeyJ2gj_YJNc6SYh4pgikN3V2NYaxFEA");
         HEADERS = ROWS[0].split(";");
         for (int j = 2; j < ROWS.length; j++) {
             String[] CELLS = ROWS[j].split(";");
@@ -20,7 +20,7 @@ class DataBroker {
                 String D = CELLS[i];
                 if (D.length() == 0) D = "0";
                 dataList.add(new Data(CELLS[1], D, HEADERS[i]));
-                println("Land: " + CELLS[1] + " årstal: " + HEADERS[i] + " døde: " + D);
+                //println("Land: " + CELLS[1] + " årstal: " + HEADERS[i] + " døde: " + D);
             }
         }
     }
@@ -28,6 +28,7 @@ class DataBroker {
         public int getData(String year, String land) {
             int D = 0;
             for(int i = 0; i < dataList.size(); i++){
+       //   println("year"+ dataList.get(0).year);
                 if(land.equalsIgnoreCase(dataList.get(i).land) && year.equals(dataList.get(i).year) ){
                     D = Integer.parseInt(dataList.get(i).deaths);
 

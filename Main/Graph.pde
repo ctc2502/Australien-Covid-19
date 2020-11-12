@@ -1,5 +1,5 @@
 
-class Graph extends DataBroker {
+class Graph {
 
     public void DRAW(DataBroker DB, InputField country, InputField year){
         pushMatrix();
@@ -10,7 +10,8 @@ class Graph extends DataBroker {
             String yearString = yearInt+"";
                 stroke( (year.Text.equalsIgnoreCase(yearString)) ? 0xffffff00 : 255);
                 fill( (year.Text.equalsIgnoreCase(yearString)) ? 0xffffff00 : 255);
-            rect(100+i*15,height-55,10, -DB.getData(yearString,country.Text));
+                //println(DB.getData(yearString,country.Text));
+            rect(100+i*15,height-55,10, height-55*DB.getData(yearString,country.Text));
             fill(0,0,0);
         }
 

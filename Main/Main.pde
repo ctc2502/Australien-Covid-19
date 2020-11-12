@@ -14,14 +14,12 @@ import java.util.ArrayList;
     String msg2;
     int x = 1300;
 
-    @Override
     public void settings() {
         //size(1000, 1000);
         DB.loadData();
         fullScreen();
     }
 
-    @Override
     public void setup() {
         super.setup();
         textboxes.add(year);
@@ -30,7 +28,7 @@ import java.util.ArrayList;
     }
 
     public void draw() {
-
+/*
         clear();
         background(0,150,175);
 
@@ -52,11 +50,9 @@ import java.util.ArrayList;
             }
             text(msg, (x+200 - textWidth(msg)), 260);
         }
-
-
+        */
     }
 
-    @Override
     public void keyPressed() {
         super.keyPressed();
         for (InputField t : textboxes) {
@@ -67,7 +63,6 @@ import java.util.ArrayList;
         }
     }
 
-    @Override
     public void mousePressed() {
         super.mousePressed();
         for (InputField t : textboxes) {
