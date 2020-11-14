@@ -5,15 +5,19 @@ class Graph {
         pushMatrix();
         scale((float) 0.5);
         translate(0, 1025);
-        for (int i = 0; i < 115; i++) {
-            int yearInt = 1900+i;
-            String yearString = yearInt+"";
+        //for (int i = 0; i < 46; i++) {
+            String yearString = year.Text;
+            country.Text = "Australia";
                 stroke( (year.Text.equalsIgnoreCase(yearString)) ? 0xffffff00 : 255);
                 fill( (year.Text.equalsIgnoreCase(yearString)) ? 0xffffff00 : 255);
-                //println(DB.getData(yearString,country.Text));
-            rect(100+i*15,height-55,10, -200-DB.getData(yearString,country.Text));
+                println(DB.getData(yearString,country.Text));
+                
+            if (keyCode == ENTER) {
+            rect(i,height-55,10, -DB.getData(yearString,country.Text));
+            println(i);
+            }
             fill(0,0,0);
-        }
+        //}
 
         popMatrix();
     }

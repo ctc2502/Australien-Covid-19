@@ -12,7 +12,8 @@ import java.util.ArrayList;
     boolean send = false;
     String msg;
     String msg2;
-    int x = 1300;
+    int x = width;
+    int i = 100;
 
     public void settings() {
         //size(1000, 1000);
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 
         textboxes.add(year);
         textboxes.add(country);
+        country.Text= "total_deaths";
 
     }
 
@@ -58,8 +60,12 @@ import java.util.ArrayList;
         super.keyPressed();
         for (InputField t : textboxes) {
             if (t.KEYPRESSED(key, keyCode)) {
+                x = width;
                 send = true;
                 msg = "Land: " + textboxes.get(1).Text + "\n" + "År: " + textboxes.get(0).Text + "\n" + "Dødsfald: " + DB.getData(year.Text,country.Text);
+                if (i > 50 ) {
+                  i = i - 15;
+                }
             }
         }
     }
