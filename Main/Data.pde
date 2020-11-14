@@ -10,7 +10,9 @@ class Data {
         this.year = year;
         this.land = land;
         println(land);
- println(deaths);
+        println(year);
+        println(deaths);
+        
     }
 
 

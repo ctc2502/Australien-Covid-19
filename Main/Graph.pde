@@ -11,7 +11,7 @@ class Graph {
                 stroke( (year.Text.equalsIgnoreCase(yearString)) ? 0xffffff00 : 255);
                 fill( (year.Text.equalsIgnoreCase(yearString)) ? 0xffffff00 : 255);
                 //println(DB.getData(yearString,country.Text));
-            rect(100+i*15,height-55,10, height-55*DB.getData(yearString,country.Text));
+            rect(100+i*15,height-55,10, -200-DB.getData(yearString,country.Text));
             fill(0,0,0);
         }
 

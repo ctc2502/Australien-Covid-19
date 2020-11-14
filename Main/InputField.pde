@@ -67,8 +67,9 @@ class InputField {
                 boolean isKeyCapitalLetter = (KEY >= 'A' && KEY <= 'Z');
                 boolean isKeySmallLetter = (KEY >= 'a' && KEY <= 'z');
                 boolean isKeyNumber = (KEY >= '0' && KEY <= '9');
+                boolean isKeySpecial = (KEY == '_' || KEY == '-');
 
-                if (isKeyCapitalLetter || isKeySmallLetter || isKeyNumber) {
+                if (isKeyCapitalLetter || isKeySmallLetter || isKeyNumber || isKeySpecial) {
                     addText(KEY);
                 }
             }

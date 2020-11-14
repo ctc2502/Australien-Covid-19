@@ -4,8 +4,8 @@ import java.util.ArrayList;
     DataBroker DB = new DataBroker();
     Graph G = new Graph();
 
-    InputField country = new InputField(900, 50, 300, 35);
-    InputField year = new InputField(900, 150, 300, 35);
+    InputField country = new InputField(900, 50, 400, 35);
+    InputField year = new InputField(900, 150, 400, 35);
 
     ArrayList<InputField> textboxes = new ArrayList<InputField>();
 
