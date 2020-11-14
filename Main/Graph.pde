@@ -8,10 +8,10 @@ class Graph {
         //for (int i = 0; i < 46; i++) {
             String yearString = year.Text;
             country.Text = "Australia";
-                stroke( (year.Text.equalsIgnoreCase(yearString)) ? 0xffffff00 : 255);
-                fill( (year.Text.equalsIgnoreCase(yearString)) ? 0xffffff00 : 255);
+                stroke(193,39,45);
+                fill(193,39,45);
+                rect(0,1060,1920, -DB.getData(yearString,country.Text)/30);
                 //println(DB.getData(yearString,country.Text));
-                rect(100,height-55,10, -DB.getData(yearString,country.Text));
             if (keyCode == ENTER) {
             
             //println(i);
@@ -26,7 +26,6 @@ class Graph {
         strokeWeight(5);
         textSize(32);
         fill(255);
-        text("Country",x,y-10);
-        text("Type in command",x,y+90);
+        text("Type in command",x,y-10);
     }
 }

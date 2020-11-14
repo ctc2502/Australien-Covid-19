@@ -4,12 +4,13 @@ import java.util.ArrayList;
     DataBroker DB = new DataBroker();
     Graph G = new Graph();
 
-    InputField country = new InputField(1450, 75, 400, 35);
+    InputField country = new InputField(1450, -100, 400, 35);
     InputField year = new InputField(1450, 175, 400, 35);
 
     ArrayList<InputField> textboxes = new ArrayList<InputField>();
     
     PFont Bahn;
+    PImage noAus;
 
     boolean send = false;
     String msg;
@@ -28,7 +29,9 @@ import java.util.ArrayList;
 
         textboxes.add(year);
         textboxes.add(country);
-        country.Text= "total_deaths";
+        
+        noAus = loadImage("noAUSY.png");
+        noAus.resize(1920, 1080);
         
         Bahn = createFont("BAHNSCHRIFT.TTF", 16);
         textFont(Bahn);
@@ -37,17 +40,24 @@ import java.util.ArrayList;
 
     public void draw() {
         clear();
-        background(46, 49, 146);
-
-
+        background(250, 213, 160);
+        
+        
+        
         G.DRAW(DB,country,year);
-        G.display(country.X, country.Y);
+        image(noAus, 0, 0);
+        G.display(year.X, year.Y);
 
 
         //Felter bliver tegnet
+        noStroke();
+        fill(46,49,105);
+        rect(1460, 185, 400, 35);
         for (InputField t : textboxes) {
             t.DRAW();
         }
+        
+        
 
         //WOW ANIMATION
         if (send) {
