@@ -26,10 +26,10 @@ class DataBroker {
         }
     }
 
-        public float getData(String year, String land) {
+        public float getData(String topic, String land) {
             float D = 0;
             for(int i = 0; i < dataList.size(); i++){
-                if(land.equalsIgnoreCase(dataList.get(i).land) && year.equals(dataList.get(i).year) ){
+                if(land.equalsIgnoreCase(dataList.get(i).land) && topic.equalsIgnoreCase(dataList.get(i).topic) ){
                     D = Float.parseFloat(dataList.get(i).deaths);
 
                 }

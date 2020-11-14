@@ -5,7 +5,7 @@ import java.util.ArrayList;
     Graph G = new Graph();
 
     InputField country = new InputField(1450, -100, 400, 35);
-    InputField year = new InputField(1450, 175, 400, 35);
+    InputField topic = new InputField(1450, 175, 400, 35);
 
     ArrayList<InputField> textboxes = new ArrayList<InputField>();
     
@@ -16,6 +16,8 @@ import java.util.ArrayList;
     String msg;
     String msg2;
     PVector msgPOS = new PVector(1920/2, 1080/2);
+    
+    float fyld = 0;
 
     public void settings() {
         //size(1000, 1000);
@@ -27,7 +29,7 @@ import java.util.ArrayList;
         super.setup();
         DB.loadData();
 
-        textboxes.add(year);
+        textboxes.add(topic);
         textboxes.add(country);
         
         noAus = loadImage("noAUSY.png");
@@ -44,9 +46,9 @@ import java.util.ArrayList;
         
         
         
-        G.DRAW(DB,country,year);
+        G.DRAW(DB,country,topic);
         image(noAus, 0, 0);
-        G.display(year.X, year.Y);
+        G.display(topic.X, topic.Y);
 
 
         //Felter bliver tegnet
@@ -57,7 +59,9 @@ import java.util.ArrayList;
             t.DRAW();
         }
         
-        
+        noStroke();
+        fill(46,49,105);
+        rect(1200, 450, 800, 20);
 
         //WOW ANIMATION
         if (send) {
@@ -72,6 +76,8 @@ import java.util.ArrayList;
             text(msg, (msgPOS.x - textWidth(msg)), msgPOS.y);
             popMatrix();
         }
+        
+        
        
     }
 
@@ -81,7 +87,8 @@ import java.util.ArrayList;
             if (t.KEYPRESSED(key, keyCode)) {
                 msgPOS.x = width/2;
                 send = true;
-                msg = round(DB.getData(year.Text,country.Text))+"";
+                msg = round(DB.getData(topic.Text,country.Text))+"";
+                fyld=1;
             }
         }
     }

@@ -3,11 +3,11 @@ class Data {
 
     String land;
     String deaths;
-    String year;
+    String topic;
 
-    Data(String land, String deaths, String year){
+    Data(String land, String deaths, String topic){
         this.deaths = deaths;
-        this.year = year;
+        this.topic = topic;
         this.land = land;
         /*println(land);
         println(year);
