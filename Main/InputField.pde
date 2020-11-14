@@ -16,9 +16,9 @@ class InputField {
         this.H = H;
     }
     
-    public color Background = color(140, 140, 140);
+    public color Background = color(255, 255, 255);
     public color Foreground = color(0, 0, 0);
-    public color BackgroundSelected = color(160, 160, 160);
+    public color BackgroundSelected = color(220, 220, 220);
     public color Border = color(30, 30, 30);
 
     public boolean BorderEnable = false;
@@ -52,7 +52,8 @@ class InputField {
         fill(Foreground);
 
         textSize(TEXTSIZE);
-        text(Text, X + (textWidth("a") / 2), Y + TEXTSIZE);
+        text(Text, X + (textWidth("a") / 2), Y+TEXTSIZE);
+         
     }
 
     boolean KEYPRESSED(char KEY, int KEYCODE) {
