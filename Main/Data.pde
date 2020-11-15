@@ -2,16 +2,16 @@ class Data {
 
 
     String land;
-    String deaths;
+    String amount;
     String topic;
 
-    Data(String land, String deaths, String topic){
-        this.deaths = deaths;
+    Data(String land, String amount, String topic){
+        this.amount = amount;
         this.topic = topic;
         this.land = land;
         /*println(land);
         println(year);
-        println(deaths);*/
+        println(amount);*/
         
     }
 

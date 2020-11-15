@@ -1,6 +1,8 @@
 
 class Graph {
-
+    public color riskyRed = color(193,39,45);
+    public color yeasyYellow = color(251, 176, 59);
+    
     public void DRAW(DataBroker DB, InputField country, InputField topic){
         pushMatrix();
         scale((float) 1);
@@ -8,14 +10,15 @@ class Graph {
         //for (int i = 0; i < 46; i++) {
             String topicString = topic.Text;
             country.Text = "Australia";
-                stroke(193,39,45);
-                fill(193,39,45);
+                //stroke(193,39,45);
+                fill( (fyld > -500) ? yeasyYellow : riskyRed);
+                
                 if (fyld > -DB.getData(topicString,country.Text)/30) {
                 fyld = fyld - 10;
                 } else if (fyld < -DB.getData(topicString,country.Text)/30) {
                 fyld = fyld + 10;
                 }
-                rect(0,1060,1920, fyld);
+                rect(0,1062,1920, fyld);
                 println(fyld);
                 //println(DB.getData(topicString,country.Text));
             if (keyCode == ENTER) {
@@ -45,6 +48,8 @@ class Graph {
         
         fill(255);
         textSize(32);
-        text("Relevant topics: ", x-200,y+350);
+        text("Relevant topics ", x-250,y+350);
+        text("Covid-19 Cases nationwide [total_cases]", x-250,y+390);
+        text("Covid-19 Deaths nationwide [total_deaths]", x-250,y+425);
     }
 }

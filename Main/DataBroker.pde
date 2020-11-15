@@ -30,7 +30,7 @@ class DataBroker {
             float D = 0;
             for(int i = 0; i < dataList.size(); i++){
                 if(land.equalsIgnoreCase(dataList.get(i).land) && topic.equalsIgnoreCase(dataList.get(i).topic) ){
-                    D = Float.parseFloat(dataList.get(i).deaths);
+                    D = Float.parseFloat(dataList.get(i).amount);
 
                 }
             }
