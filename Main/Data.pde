@@ -9,10 +9,10 @@ class Data {
         this.amount = amount;
         this.topic = topic;
         this.land = land;
-        /*println(land);
-        println(year);
-        println(amount);*/
-        
+        //println(land);
+        //println(amount);
+      
+        println(topic);
     }
 
 

@@ -5,16 +5,16 @@ import java.util.ArrayList;
     Graph G = new Graph();
 
     InputField country = new InputField(1450, -100, 400, 35);
-    InputField topic = new InputField(1450, 175, 400, 35);
+    InputField topic = new InputField(1200, 175, 400, 35);
 
     ArrayList<InputField> textboxes = new ArrayList<InputField>();
     
     PFont Bahn;
     PImage noAus;
-
+    PImage logo;
     boolean send = false;
+    
     String msg;
-    String msg2;
     PVector msgPOS = new PVector(1920/2, 1080/2);
     
     float fyld = 0;
@@ -27,17 +27,21 @@ import java.util.ArrayList;
 
     public void setup() {
         super.setup();
+        println("Commands:");
         DB.loadData();
-
+        
         textboxes.add(topic);
         textboxes.add(country);
         
         noAus = loadImage("noAUSY.png");
         noAus.resize(1920, 1080);
         
+        logo = loadImage("Kangroove.png");
+        logo.resize(3490/21, 1838/21);
+        
         Bahn = createFont("BAHNSCHRIFT.TTF", 16);
         textFont(Bahn);
-
+        
     }
 
     public void draw() {
@@ -54,14 +58,14 @@ import java.util.ArrayList;
         //Felter bliver tegnet
         noStroke();
         fill(46,49,105);
-        rect(1460, 185, 400, 35);
+        rect(1210, 185, 400, 35);
         for (InputField t : textboxes) {
             t.DRAW();
         }
         
         noStroke();
         fill(46,49,105);
-        rect(1200, 450, 800, 20);
+        rect(1150, 450, 800, 20);
 
         //WOW ANIMATION
         if (send) {
@@ -70,8 +74,8 @@ import java.util.ArrayList;
                 msgPOS.x = msgPOS.x-10;
             } */
             pushMatrix();
-            translate(-msgPOS.x*7+900, -msgPOS.y*7-100);
-            scale(8);
+            translate(-msgPOS.x*6+910, -msgPOS.y*6-100);
+            scale(7);
             fill(252, 238, 33);
             text(msg, (msgPOS.x - textWidth(msg)), msgPOS.y);
             popMatrix();
@@ -87,7 +91,7 @@ import java.util.ArrayList;
             if (t.KEYPRESSED(key, keyCode)) {
                 msgPOS.x = width/2;
                 send = true;
-                msg = round(DB.getData(topic.Text,country.Text))+"";
+                msg = round((DB.getData(topic.Text,country.Text)))+"";
                 fyld=1;
             }
         }
