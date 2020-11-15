@@ -48,7 +48,7 @@ class Graph {
         
         fill(255);
         textSize(32);
-        text("Relevant topics ", x-250,y+350);
+        text("Relevant topics [Command] ", x-250,y+350);
         text("Covid-19 Cases nationwide [total_cases]", x-250,y+390);
         text("Covid-19 Deaths nationwide [total_deaths]", x-250,y+425);
     }
