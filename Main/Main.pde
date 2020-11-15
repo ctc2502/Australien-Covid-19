@@ -64,8 +64,8 @@ import java.util.ArrayList;
         }
         
         noStroke();
-        fill(46,49,105);
-        rect(1150, 450, 800, 20);
+        fill(50);
+        rect(1150, 300, 800, 150);
 
         //WOW ANIMATION
         if (send) {
@@ -74,7 +74,7 @@ import java.util.ArrayList;
                 msgPOS.x = msgPOS.x-10;
             } */
             pushMatrix();
-            translate(-msgPOS.x*6+910, -msgPOS.y*6-100);
+            translate(-msgPOS.x*6+930, -msgPOS.y*6-100);
             scale(7);
             fill(252, 238, 33);
             text(msg, (msgPOS.x - textWidth(msg)), msgPOS.y);
