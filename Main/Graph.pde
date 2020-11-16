@@ -13,9 +13,9 @@ class Graph {
                 //stroke(193,39,45);
                 fill( (fyld > -500) ? yeasyYellow : riskyRed);
                 
-                if (fyld > -DB.getData(topicString,country.Text)/30) {
+                if (fyld > -DB.getData(topicString,country.Text)/100) {
                 fyld = fyld - 10;
-                } else if (fyld < -DB.getData(topicString,country.Text)/30) {
+                } else if (fyld < -DB.getData(topicString,country.Text)/100) {
                 fyld = fyld + 10;
                 }
                 rect(0,1062,1920, fyld);
